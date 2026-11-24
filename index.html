@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f3fb">
+  <title>Tomodoku.</title>
+  <link rel="icon" href="data:,">
+  <script type="module" crossorigin src="./assets/index-CYnMKSdz.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BSJ-mUrP.css">
+</head>
+<body>
+  <header class="topbar"><div class="nav-inner">
+    <div class="brand"><span class="brand-icon" aria-hidden="true"><img class="cat-face" alt=""></span><span>Tomodoku<span class="brand-dot">.</span></span></div>
+    <nav aria-label="ゲームメニュー">
+      <button id="rank-mobile" class="icon-button" type="button" aria-label="今日のランキング"><i data-icon="cup"></i></button>
+      <button id="sound" class="icon-button" type="button" aria-label="音をオンにする" aria-pressed="false"><i data-icon="mute"></i></button>
+      <button id="help" class="help-button" type="button"><span class="question">?</span><span>遊び方</span></button>
+    </nav>
+  </div></header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <canvas id="landscape" aria-hidden="true"></canvas>
+      <div class="hero-copy"><div class="stage-tag"><i class="stage-light"></i><span id="stage">STAGE 01</span></div>
+        <h1 id="title">Tomodoku.</h1><p>色のエリアにかくれた、ねこたちを見つけよう！</p>
+      </div>
+    </section>
+    <div class="game-layout">
+      <section class="panel puzzle-panel" aria-labelledby="board-title">
+        <div class="panel-heading board-heading"><h2 id="board-title"><i data-icon="grid"></i>パズルボード</h2><span id="landscape-stage"></span><span id="size" class="size-tag">9 × 9</span></div>
+        <div class="board-wrap"><div id="board" aria-label="パズル盤面"></div><div id="effects" aria-hidden="true"></div><div id="cell-preview" hidden></div></div>
+      </section>
+      <aside class="sidebar">
+        <section class="panel status-panel" aria-label="プレイ状況">
+          <div class="panel-heading status-heading"><h2><i data-icon="pad"></i>プレイ状況</h2><span class="player"><img class="cat-face" alt="">ともち</span></div>
+          <div class="stats">
+            <div class="stat"><span class="stat-label">見つけたねこ</span><strong class="stat-value"><span id="found">0</span><small> / <b id="goal">9</b> 匹</small></strong></div>
+            <div class="stat"><span class="stat-label">残りライフ</span><span id="hearts" class="hearts"></span></div>
+            <div class="stat"><span class="stat-label">今日のスコア</span><strong class="stat-value score"><span id="score">0</span><small> pt</small></strong></div>
+          </div>
+          <div class="streak"><span id="streak-label">サイズアップまで</span><span class="streak-track" id="streak-track"></span></div>
+        </section>
+        <section class="panel memo-panel" aria-labelledby="memo-title">
+          <div class="panel-heading"><h2 id="memo-title"><i data-icon="pencil"></i>メモ・ねこ</h2></div>
+          <div class="memo-content"><div id="colors" role="group" aria-label="メモ記号と猫の配置">
+            <button id="cat-tool" class="swatch" type="button" aria-label="猫を置く" title="猫を置く"><img class="cat-face" alt=""></button>
+          </div>
+            <div class="controls-guide"><div><kbd>猫 → マス</kbd><span>ねこを置く</span></div><div><kbd>記号を2タップ</kbd><span>同じメモを全消去</span></div></div>
+          </div>
+        </section>
+        <button class="ranking-button" id="rank" type="button"><i data-icon="cup"></i><span>今日のランキング</span></button>
+      </aside>
+    </div>
+  </main>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-inner">
+    <button class="close" id="close" aria-label="閉じる">×</button>
+    <div id="dialog-content"></div>
+  </div></dialog>
+  <div class="sr-only" role="status" id="announce"></div>
+</body>
+</html>
